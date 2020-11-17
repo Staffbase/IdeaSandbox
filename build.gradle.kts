@@ -1,17 +1,19 @@
 plugins {
-  kotlin("jvm") version "1.3.50"
+    kotlin("jvm") version "1.4.0"
 }
 
 allprojects {
-  apply {
-    plugin("org.jetbrains.kotlin.jvm")
-  }
+    apply {
+        plugin("org.jetbrains.kotlin.jvm")
+    }
 
-  repositories {
-    mavenCentral()
-  }
+    repositories {
+        mavenCentral()
+    }
 
-  dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-  }
+    dependencies {
+        implementation(kotlin("stdlib-jdk8"))
+        testImplementation(kotlin("test"))
+        testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.4.0")
+    }
 }

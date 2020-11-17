@@ -1,11 +1,11 @@
+// in the runtime classpath the problem does not occur
+
 fun main() {
-  println("Hello, World!")
+    val foo = ClassLoader.getSystemClassLoader().getResources(
+        "org/apache/logging/log4j/util/PropertiesUtil.class"
+    )
 
-  val foo = ClassLoader.getSystemClassLoader().getResources(
-    "org/apache/logging/log4j/util/PropertiesUtil.class"
-  )
-
-  foo.asIterator().forEach { s ->
-    println(s.toString())
-  }
+    foo.asIterator().forEach { s ->
+        println(s.toString())
+    }
 }
